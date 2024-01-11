@@ -1,8 +1,8 @@
 const questions = [
   {
-    question: "친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?",
+    question: "질문",
     answer: {
-      a: { text: "오오 그래??? 나중에 먹어봐야지", type: "A" },
+      a: { text: '"<p bread-type="A">오오 그래??? 나중에 먹어봐야지</p>"' },
       b: { text: "답", type: "유형" },
     },
   },
