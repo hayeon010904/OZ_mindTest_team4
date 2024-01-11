@@ -1,11 +1,13 @@
-//해야할 것들
-//질문객체가 담긴 배열 만들기
-//클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게
-//버튼 눌렀을 때 점수 +
-//눌렀을 때 누른 버튼 색이 유지되도록.
-//버늩 누른 후에 문제,답변 바뀌기 -> 텍스트만 바꿜지. 화면 전체를 바꿀지
-//된다면) 이전 이후 질문으로
-//가장 높은 점수 출력.
+//하연 해야할 것들
+//질문객체가 담긴 배열 만들기 -> 완!!
+//클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게 -> 완!!
+//상단 진행 바 +30px -> 완!!
+//버튼 눌렀을 때 점수 + ...어케해요~,,랄ㄹ라라....
+//가장 높은 점수 출력 하는 것 까지!!
+
+//+ 추가적으로할것들
+// 이전 버튼 눌렀을 때 이전 질문으로 돌아가는데, 눌렀던 버튼이 저장되도록
+// 로컬스토리지에 사용자정보 저장
 
 //버튼 클릭했을 때 점수 부여//
 const question = document.getElementById("question");
@@ -129,7 +131,6 @@ const questions = [
 ];
 
 //답변 클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게
-
 let ArrIndex = 0;
 answer.addEventListener("click", function () {
   if (ArrIndex < questions.length) {
@@ -137,16 +138,17 @@ answer.addEventListener("click", function () {
     answerTop.textContent = questions[ArrIndex].answers.A.text;
     answerBottom.textContent = questions[ArrIndex].answers.B.text;
     ArrIndex++;
+// 진행바 +30px씩
     const progressBar = document.querySelector(".progressbar-bar");
     const currnetWIdth = progressBar.offsetWidth; // 30
     const newWidth = currnetWIdth + 30; // 30씩 추가
-
     progressBar.style.width = newWidth + "px";
   }
 });
 
-const breadclassA = questions[ArrIndex].answers.A.class; // bread1
-const breadclassB = questions[ArrIndex].answers.B.class; //bread2
+// //아래부터는 점수계산 시도들..~
+// const breadclassA = questions[ArrIndex].answers.A.class; // bread1
+// const breadclassB = questions[ArrIndex].answers.B.class; //bread2
 
 //    console.log(breadclass1)
 //    console.log(breadclass2)
@@ -166,19 +168,3 @@ const breadclassB = questions[ArrIndex].answers.B.class; //bread2
 
 //    }
 
-// for(let i =1; i<=5; i++){
-//     const bread = document.querySelector(`.bread${i}`);
-//     bread.addEventListener("click", function () {
-//       answerArr[i - 1] += 1
-//       console.log(answerArr);
-//     });
-//   };
-
-// for(let i =0 ; i <=15 ; i++) {
-//     ('.question p)의
-//     innterText = "questions[i].question"
-
-//     ('#answer-left p')
-//     innterHTML = "<p class="&{uestions[0].answer.a.type}">&{uestions[0].answer.a.text}</p>"
-
-//     }
