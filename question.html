@@ -2,16 +2,18 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="question.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="question.css" />
     <title>붕어빵 심리테스트</title>
 </head>
 
 <body>
     <div class="garland"></div>
-    <div class="container">
+    <div class="background_top"></div>
+    <div class="background_bottom"></div>
+    <div class="container-col">
         <div class="progressbar">
             <div class="progressbar-bg"></div>
             <div class="progressbar-bar"></div>
@@ -21,15 +23,32 @@
         </div>
         <div class="answers">
             <div class="answer" id="answer-left">
-                <p bread-type="A">오오 그래??? 나중에 먹어봐야지</p>
-                <!-- 요소.attributes[0].value  로 속성 값 접근-->
+                <p class="bread1">오오 그래??? 나중에 먹어봐야지</p>
             </div>
             <div class="answer" id="answer-right">
-                <p bread-type="B">오오 그래??? 나중에 먹어봐야지</p>
+                <p class="bread2">오오 그래??? 나중에 먹어봐야지</p>
             </div>
         </div>
     </div>
+    </div>
+    <script>
+        const bread1 = document.querySelector(".bread1");
+        const bread2 = document.querySelector(".bread2");
+        const bread3 = document.querySelector(".bread3");
+        const bread4 = document.querySelector(".bread4");
+        const bread5 = document.querySelector(".bread5");
+        const answerArr = [0, 0, 0, 0, 0];
 
+        for (let i = i; i <= 5; i++) {
+            const bread = document.querySelector(`.bread${i}`);
+
+            bread.addEventListener("click", function () {
+                answerArr[i - 1] += 1;
+                console.log(answerArr);
+            });
+        }
+    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
