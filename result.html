@@ -8,124 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Nanum Pen Script', cursive;
-        }
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="result.css">
 
-        body,
-        html {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        .background {
-            width: 100%;
-            height: 100%;
-        }
-
-        .continer {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .resultBox {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 500px;
-            margin: auto;
-            height: 600px;
-            width: 400px;
-            background-color: white;
-            border: 5px solid;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .shareBox {
-            width: 410px;
-            height: 83px;
-            background-color: rgb(21, 21, 60);
-            position: fixed;
-            border-bottom-right-radius: 5px;
-            border-bottom-left-radius: 5px;
-            top: 626px;
-        }
-
-        .shareBox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .Btn {
-            color: white;
-            background-color: rgb(21, 21, 60);
-            border: solid rgb(255, 255, 255) 2px;
-            border-radius: 100px;
-            height: 56px;
-            width: 56px;
-            font-size: larger;
-        }
-
-        .share {
-            width: 300px;
-            margin-right: 17px;
-        }
-
-        .Btn:hover {
-            background-color: rgb(36, 36, 74);
-        }
-
-        h1 {
-            font-size: 50px;
-            color: rgb(53, 139, 81);
-            margin-bottom: 0;
-            margin-top: 40px;
-        }
-
-        .inpo {
-            color: rgb(53, 139, 81);
-            box-sizing: border-box;
-            padding-left: 60px;
-            padding-right: 60px;
-            padding-top: 10px;
-            font-size: 30px;
-        }
-
-        .background-img {
-
-            height: 100%;
-            background-image: url(6221984.jpg);
-            background-size: cover;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="background">
-        <div class="background-img">
-            <div class="continer">
-                <div class="resultBox">
-                    <div class="name">
-                        <h1>팥붕어빵</h1>
-                    </div>
-                    <div class="img">
-                        <img src="그냥붕어빵.jpeg" alt="그냥붕어빵">
-                    </div>
-                    <div class="inpo">
-                        기본적으로 밀가루와 마가린을 조합한 반죽을 틀에 부은 다음 팥을 넣고 강한 불로 굽는다.
-                        가격은 지역마다 조금씩 다르지만 대개는 1,000원에 2개.
-                    </div>
-                </div>
-                <div class="shareBox">
-                    <button class="share Btn">테스트 공유하기</button>
-                    <button class="reset Btn">↺</button>
-                </div>
+    <div class="garland"></div>
+    <div class="background_top"></div>
+    <div class="background_bottom"></div>
+    <div class="continer">
+        <div class="resultBox">
+            <div class="bread-result">
+                <h1 id="bread-result-content">팥붕어빵</h1>
+            </div>
+            <div class="bread-result-imgDiv">
+                <img id="bread-result-img" src="" alt="">
+            </div>
+            <div class="bread-result-info">
+                <p>&nbsp;기본적으로 밀가루와 마가린을 조합한 반죽을 틀에 부은 다음 팥을 넣고 강한 불로 굽는다.</br>&nbsp;가격은 지역마다 조금씩 다르지만 대개는 1,000원에 2개.
+                </p>
+            </div>
+            <div class="shareBox">
+                <button class="share resultPageBtn">테스트 공유하기</button>
+                <button class="reset resultPageBtn">↺</button>
             </div>
         </div>
     </div>
