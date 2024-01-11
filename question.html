@@ -11,15 +11,19 @@
 
 <body>
     <div class="garland"></div>
-    <div class="background_top"></div>
-    <div class="background_bottom"></div>
-    <div class="container-col">
-        <div class="progressbar">
-            <div class="progressbar-bg"></div>
-            <div class="progressbar-bar"></div>
-        </div>
-        <div class="question">
-            <p>친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
+
+    <div class="container">
+      <div class="progressbar">
+        <div class="progressbar-bg"></div>
+        <div class="progressbar-bar"></div>
+      </div>
+      <div class="question">
+        <p>친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
+      </div>
+      <div class="answers">
+        <div class="answer" id="answer-left">
+          <p class="bread1">오오 그래??? 나중에 먹어봐야지</p>
+
         </div>
         <div class="answers">
             <div class="answer" id="answer-left">
@@ -32,21 +36,23 @@
     </div>
     </div>
     <script>
-        const bread1 = document.querySelector(".bread1");
-        const bread2 = document.querySelector(".bread2");
-        const bread3 = document.querySelector(".bread3");
-        const bread4 = document.querySelector(".bread4");
-        const bread5 = document.querySelector(".bread5");
-        const answerArr = [0, 0, 0, 0, 0];
 
-        for (let i = i; i <= 5; i++) {
-            const bread = document.querySelector(`.bread${i}`);
+      const bread1 = document.querySelector(".bread1");
+      const bread2 = document.querySelector(".bread2");
+      const bread3 = document.querySelector(".bread3");
+      const bread4 = document.querySelector(".bread4");
+      const bread5 = document.querySelector(".bread5");
+      const answerArr = [0, 0, 0, 0, 0];
 
-            bread.addEventListener("click", function () {
-                answerArr[i - 1] += 1;
-                console.log(answerArr);
-            });
-        }
+      for (let i = 1; i <= 5; i++) {
+        const bread = document.querySelector(`.bread${i}`);
+
+        bread.addEventListener("click", function () {
+          answerArr[i - 1] += 1;
+          console.log(answerArr);
+        });
+      }
+
     </script>
     <script src="app.js"></script>
 </body>
