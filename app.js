@@ -33,7 +33,7 @@ test.addEventListener("click", (e) => {
 });
 
 // 답안 프린트
-console.log(questions[0].question);
+console.log(questions[0].answer.a.text);
 
 // 클릭시 푸쉬되는 값들 // 15개
 
