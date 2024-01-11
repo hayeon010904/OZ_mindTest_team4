@@ -59,6 +59,9 @@
   background: #e8ac56;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 94c239f (질문카드-호버)
 .answer:hover {
   cursor: pointer;
   background-color: #402500;
@@ -67,9 +70,12 @@
 .answer p {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
 =======
 .answer p {
 >>>>>>> 2074e32 (질문페이지)
+=======
+>>>>>>> 94c239f (질문카드-호버)
   line-height: 80px;
   color: #353535;
   font-weight: 500;
@@ -77,9 +83,15 @@
   font-size: 20px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 94c239f (질문카드-호버)
 .answer p:hover {
   color: #ededed;
   transition: all 0.3s;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> 2074e32 (질문페이지)
+=======
+>>>>>>> 94c239f (질문카드-호버)
