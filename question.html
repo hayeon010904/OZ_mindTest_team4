@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="question.css" />
     <title>붕어빵 심리테스트</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="garland"></div>
+
     <div class="container">
       <div class="progressbar">
         <div class="progressbar-bg"></div>
@@ -21,13 +23,20 @@
       <div class="answers">
         <div class="answer" id="answer-left">
           <p class="bread1">오오 그래??? 나중에 먹어봐야지</p>
+
         </div>
-        <div class="answer" id="answer-right">
-          <p class="bread2">오오 그래??? 나중에 먹어봐야지</p>
+        <div class="answers">
+            <div class="answer" id="answer-left">
+                <p class="bread1">오오 그래??? 나중에 먹어봐야지</p>
+            </div>
+            <div class="answer" id="answer-right">
+                <p class="bread2">오오 그래??? 나중에 먹어봐야지</p>
+            </div>
         </div>
-      </div>
+    </div>
     </div>
     <script>
+
       const bread1 = document.querySelector(".bread1");
       const bread2 = document.querySelector(".bread2");
       const bread3 = document.querySelector(".bread3");
@@ -43,6 +52,9 @@
           console.log(answerArr);
         });
       }
+
     </script>
-  </body>
+    <script src="app.js"></script>
+</body>
+
 </html>
