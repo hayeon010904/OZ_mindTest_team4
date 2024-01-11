@@ -7,7 +7,7 @@
 }
 
 .progressbar {
-  margin-top: 150px;
+  margin-top: -100px;
   position: relative;
   margin-bottom: 40px;
 }
@@ -36,7 +36,6 @@
   display: flex;
   margin-bottom: 20px;
 }
-
 .question p {
   margin: auto;
   padding: 10px 50px;
@@ -66,10 +65,12 @@
 .answer p {
   width: 100%;
   height: 100%;
-  line-height: 80px;
+}
+.answer p {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
   color: #353535;
-  font-weight: 500;
-  text-align: center;
   font-size: 20px;
 }
 .answer p:hover {

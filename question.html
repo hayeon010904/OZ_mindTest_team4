@@ -10,24 +10,25 @@
 
   <body>
     <div class="garland"></div>
-    <div class="container">
-      <div class="progressbar">
-        <div class="progressbar-bg"></div>
-        <div class="progressbar-bar"></div>
-      </div>
-      <div class="question">
-        <p>친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
-      </div>
-      <div class="answers">
+    <div class="background_top"></div>
+    <div class="background_bottom"></div>
+    <div class="container-col">
+        <div class="progressbar">
+            <div class="progressbar-bg"></div>
+            <div class="progressbar-bar"></div>
+        </div>
+        <div class="question">
+            <p>친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
+        </div>
         <div class="answer" id="answer-left">
           <p class="bread1">오오 그래??? 나중에 먹어봐야지</p>
-   
         </div>
-        <div class="answer" id="answer-right">
+      <div class="answer" id="answer-right">
           <p class="bread2">오오 그래??? 나중에 먹어봐야지</p>
         </div>
       </div>
     </div>
+          
     <script>
       const bread1 = document.querySelector(".bread1");
       const bread2 = document.querySelector(".bread2");
@@ -45,8 +46,7 @@
         });
     }
 
-
-
+    <script src="app.js"></script>
     </script>
   </body>
 </html>
