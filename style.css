@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-image: url("/img/backgound.png");
+  background-position: center;
+  background-size: contain;
+}
+
+.garland {
+  position: fixed;
+  top: 0;
+  height: 92px;
+  width: 100%;
+  background: url("/img/garland.png");
+}
