@@ -160,6 +160,7 @@ answerTop.addEventListener("click", function () {
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기 /
     questionPrint();
     progressBarPrint();
+    console.log(typeArr);
   } else {
     const answerAType = questions[ArrIndex - 1].answers.A.type;
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
@@ -167,6 +168,7 @@ answerTop.addEventListener("click", function () {
     location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
     printResult(arrMaxIndex);
+    console.log(typeArr);
   }
 });
 
@@ -176,9 +178,11 @@ answerBottom.addEventListener("click", function () {
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
     questionPrint();
     progressBarPrint();
+    console.log(typeArr);
   } else {
     const answerBType = questions[ArrIndex - 1].answers.B.type;
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
+    console.log(typeArr);
 
     location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
@@ -198,7 +202,7 @@ function progressBarPrint() {
   const currentWidth = progressBar.offsetWidth; // 30
   progressBar.style.width = currentWidth + 30 + "px";
 }
-
+// 최대값 구하기!!
 function maxBreadIndex(arr) {
   for (let i = 0; i < 5; i++) {
     answerArr.push(
@@ -208,14 +212,8 @@ function maxBreadIndex(arr) {
       )
     );
   }
-
   let maxIndex = answerArr.indexOf(Math.max(...answerArr));
   console.log(answerArr);
-  return maxIndex;
-}
-
-function printResult(type) {
-  let resultImg = document.getElementById("bread-result-img");
-  console.log(breadResult[type].breadType);
-  resultImg.attributes[1].value = `images/resultImg/bread_${type}.png`;
+  console.log(maxIndex);
+  return localStorage.setItem("breadtype", maxIndex);
 }
