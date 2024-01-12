@@ -2,55 +2,33 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="question.css" />
-    <title>붕어빵 심리테스트</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/question.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>붕어빵 심리테스트 🐟</title>
 </head>
 
 <body>
-    <div class="garland"></div>
+  <div class="garland"></div>
 
-    <div class="container">
-      <div class="progressbar">
-        <div class="progressbar-bg"></div>
+  <div class="container">
+    <div class="progressbar">
+      <div class="progressbar-bg">
         <div class="progressbar-bar"></div>
       </div>
-      <div class="question">
-        <p>친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
-      </div>
-      <div class="answers">
-        <div class="answers">
-            <div class="answer" id="answer-left">
-                <p class="bread1">오오 그래??? 나중에 먹어봐야지</p>
-            </div>
-            <div class="answer" id="answer-right">
-                <p class="bread2">오오 그래??? 나중에 먹어봐야지</p>
-            </div>
-        </div>
+
     </div>
+    <div class="question">
+      <p id="question">친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
     </div>
-    <script>
 
-      const bread1 = document.querySelector(".bread1");
-      const bread2 = document.querySelector(".bread2");
-      const bread3 = document.querySelector(".bread3");
-      const bread4 = document.querySelector(".bread4");
-      const bread5 = document.querySelector(".bread5");
-      const answerArr = [0, 0, 0, 0, 0];
-
-      for (let i = 1; i <= 5; i++) {
-        const bread = document.querySelector(`.bread${i}`);
-
-        bread.addEventListener("click", function () {
-          answerArr[i - 1] += 1;
-          console.log(answerArr);
-        });
-      }
-
-    </script>
-    <script src="app.js"></script>
+    <div class="answers">
+      <button id="answer-left" class="answer">오오 그래? 나중에 먹어봐야지</button>
+      <button id="answer-right" class="answer">무슨 맛 인데</button>
+    </div>
+  </div>
+  <script src="/scripts/question.js"></script>
 </body>
 
 </html>
