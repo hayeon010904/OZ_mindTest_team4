@@ -215,6 +215,7 @@ function maxBreadIndex(arr) {
 }
 
 function printResult(type) {
+  let resultImg = document.getElementById("bread-result-img");
   console.log(breadResult[type].breadType);
-  // html에 뿌려주는 코드 작성하면 됨.
+  resultImg.attributes[1].value = `images/resultImg/bread_${type}.png`;
 }
