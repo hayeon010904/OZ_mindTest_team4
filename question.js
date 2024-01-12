@@ -2,14 +2,18 @@
 //질문객체가 담긴 배열 만들기 -> 완!!
 //클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게 -> 완!!
 //상단 진행 바 +30px -> 완!!
-//버튼 눌렀을 때 점수 + ...어케해요~,,랄ㄹ라라....
+
+//버튼 눌렀을 때 점수 // -> 첫 질문을 html에서 설정 or js에서 설정?
+// js에서 하는게 좋을 것 같은데 시작하기 눌렀을 때 바로 질문 뜨도록 설정해야하는디
+// 방법1: js에서 첫 문제 띄우기 main html에 question.js연결해서 버튼 누르면 뜨도록
+// 방법2: html로 하는 방법 : 수동으로 첫번째 문제의 class 값 배열에 담아주기
 //가장 높은 점수 출력 하는 것 까지!!
 
-//+ 추가적으로할것들
+//+
+// 질문.답 자연스럽게 정, 줄바꿈설정
 // 이전 버튼 눌렀을 때 이전 질문으로 돌아가는데, 눌렀던 버튼이 저장되도록
-// 로컬스토리지에 사용자정보 저장
+// 로컬스토리지에 사용자정보 저장 -> 다시 돌아오면 결과화면뜨도록.
 
-//버튼 클릭했을 때 점수 부여//
 const question = document.getElementById("question");
 const answer = document.querySelector(".answers");
 const bread1 = document.querySelector(".bread1");
@@ -23,6 +27,13 @@ const answerBottom = document.querySelector("#answer-right");
 const answerArr = [0, 0, 0, 0, 0];
 //질문객체가 담긴 배열 만들기
 const questions = [
+  {
+    question: "친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?",
+    answers: {
+      A: { text: "오오 그래? 나중에 먹어봐야지", class: "bread1" },
+      B: { text: "무슨 맛 인데?", class: "bread2" },
+    },
+  },
   {
     question: "친구가 '나 속상해서 붕어빵 사먹었어' 라고 한다. 나의 반응은?",
     answers: {
@@ -130,15 +141,49 @@ const questions = [
   },
 ];
 
-//답변 클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게
-let ArrIndex = 0;
-answer.addEventListener("click", function () {
+
+//답변 클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게 + 콘솔에 붕어빵 종류 담기게
+let ArrIndex = 1;
+const classArr = []; //class값 담아주는 배열 -> 최종적으로 15개 담깁니다!
+// 위 버튼 선택했을 때
+answerTop.addEventListener("click", function () {
+    if (ArrIndex < questions.length) {
+      question.textContent = questions[ArrIndex].question;
+      answerTop.textContent = questions[ArrIndex].answers.A.text;
+      answerBottom.textContent = questions[ArrIndex].answers.B.text;
+      //Class값 저장
+      const answerAclass = questions[ArrIndex-1].answers.A.class;
+      console.log(answerAclass); //질문에 맞는 class 값인지 확인용
+      classArr.push(answerAclass); // 배열에 어떤 붕어빵인지 넣어주기
+      console.log(classArr); // 배열에 잘 들어갔는지 확인
+       
+      ArrIndex++;
+      // 진행바 +30px씩
+      const progressBar = document.querySelector(".progressbar-bar");
+      const currnetWIdth = progressBar.offsetWidth; // 30
+      const newWidth = currnetWIdth + 30; // 30씩 추가
+      progressBar.style.width = newWidth + "px";
+    } 
+  });
+//아래버튼 선택했을 때
+answerBottom.addEventListener("click", function () {
   if (ArrIndex < questions.length) {
     question.textContent = questions[ArrIndex].question;
     answerTop.textContent = questions[ArrIndex].answers.A.text;
     answerBottom.textContent = questions[ArrIndex].answers.B.text;
+    //Class값 저장
+    const answerBclass = questions[ArrIndex - 1].answers.B.class;
+    console.log(answerBclass); //질문에 맞는 class 값인지 확인용
+    classArr.push(answerBclass); // 배열에 어떤 붕어빵인지 넣어주기
+    console.log(classArr); // 배열에 잘 들어갔는지 확인
+
+    // if(ArrIndex===14){//마지막 질문일때의 class 값 수동으로 배열에 넣어주기!
+    //     const answerAClass = questions[14].answers.A.class;
+    //     classArr.push(answerAClass);
+    //     console.log(classArr);
+    // }
     ArrIndex++;
-// 진행바 +30px씩
+    // 진행바 +30px씩
     const progressBar = document.querySelector(".progressbar-bar");
     const currnetWIdth = progressBar.offsetWidth; // 30
     const newWidth = currnetWIdth + 30; // 30씩 추가
@@ -146,7 +191,10 @@ answer.addEventListener("click", function () {
   }
 });
 
+// const answerBClass = questions[ArrIndex].answers.B.class;
+// console.log(answerBClass)
 // //아래부터는 점수계산 시도들..~
+
 // const breadclassA = questions[ArrIndex].answers.A.class; // bread1
 // const breadclassB = questions[ArrIndex].answers.B.class; //bread2
 
@@ -167,4 +215,3 @@ answer.addEventListener("click", function () {
 //    } else {
 
 //    }
-
