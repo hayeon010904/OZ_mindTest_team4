@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="question.css" />
-    <title>붕어빵 심리테스트</title>
-  </head>
 
-  <body>
-    <div class="garland"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="question.css" />
+  <title>붕어빵 심리테스트</title>
+</head>
 
-    <div class="container">
-      <div class="progressbar">
-        <div class="progressbar-bg">
-            <div class="progressbar-bar"></div>
-        </div>
+<body>
+  <div class="garland"></div>
+  <div class="background_top"></div>
+  <div class="background_bottom"></div>
 
+  <div class="container">
+    <div class="progressbar">
+      <div class="progressbar-bg">
+        <div class="progressbar-bar"></div>
       </div>
-      <div class="question">
-        <p id="question">친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
-      </div>
-      
-      <div class="answers">
-        <button id="answer-left" class="answer" >오오 그래? 나중에 먹어봐야지</button>
-        <button id="answer-right"  class="answer" >무슨 맛 인데</button>
-        </div>
     </div>
-    <script src="question.js"></script>
-  </body>
+    <div class="question">
+      <p id="question">친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?</p>
+    </div>
+    <div class="answers">
+      <button id="answer-left" class="answer">오오 그래? 나중에 먹어봐야지</button>
+      <button id="answer-right" class="answer">무슨 맛 인데</button>
+    </div>
+
+  </div>
+  <button id="load-html" class="display-none">결과보기</button>
+  <div id="dynamic-content"></div>
+  <script src="question.js"></script>
+</body>
+
 </html>

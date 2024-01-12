@@ -27,7 +27,6 @@
   background: #a9907e;
   position: absolute;
   top: 0;
-
 }
 .question {
   width: 510px;
@@ -39,7 +38,7 @@
   display: flex;
   margin-bottom: 20px;
 }
-.question p{
+.question p {
   margin: auto;
   padding: 10px 50px;
   color: #e3e3e3;
@@ -74,8 +73,8 @@
 } */
 /* .answer {
   display: flex; */
-  /* justify-content: center; */
-  /* margin-top: 25px;
+/* justify-content: center; */
+/* margin-top: 25px;
   color: #353535;
   font-size: 20px;
 } */
@@ -83,3 +82,6 @@
   color: #ededed;
   transition: all 0.3s;
 } */
+.display-none {
+  display: none;
+}

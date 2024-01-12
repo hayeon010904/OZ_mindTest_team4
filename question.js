@@ -156,34 +156,30 @@ let ArrIndex = 1;
 const typeArr = []; //type 담아주는 배열 -> 최종적으로 15개 담깁니다!
 
 answerTop.addEventListener("click", function () {
+  const answerBType = questions[ArrIndex - 1].answers.A.type;
+  typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
+
   if (ArrIndex < questions.length) {
-    const answerAType = questions[ArrIndex - 1].answers.A.type;
-    typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기 /
     questionPrint();
     progressBarPrint();
   } else {
-    const answerAType = questions[ArrIndex - 1].answers.A.type;
-    typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
-
-    location.href = "result.html";
-    let arrMaxIndex = maxBreadIndex(typeArr);
-    printResult(arrMaxIndex);
+    progressBarPrint();
+    document.querySelector(".container").innerHTML = "";
+    document.querySelector("#load-html").classList.remove("display-none");
   }
 });
 
 answerBottom.addEventListener("click", function () {
+  const answerBType = questions[ArrIndex - 1].answers.B.type;
+  typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
+
   if (ArrIndex < questions.length) {
-    const answerBType = questions[ArrIndex - 1].answers.B.type;
-    typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
     questionPrint();
     progressBarPrint();
   } else {
-    const answerBType = questions[ArrIndex - 1].answers.B.type;
-    typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
-
-    location.href = "result.html";
-    let arrMaxIndex = maxBreadIndex(typeArr);
-    printResult(arrMaxIndex);
+    progressBarPrint();
+    document.querySelector(".container").innerHTML = "";
+    document.querySelector("#load-html").classList.remove("display-none");
   }
 });
 
@@ -193,7 +189,6 @@ function questionPrint() {
   answerBottom.textContent = questions[ArrIndex].answers.B.text;
   ArrIndex++;
 }
-
 function progressBarPrint() {
   const progressBar = document.querySelector(".progressbar-bar");
   const currentWidth = progressBar.offsetWidth; // 30
@@ -216,7 +211,27 @@ function maxBreadIndex(arr) {
 }
 
 function printResult(type) {
-  let resultImg = document.getElementById("bread-result-img");
+  console.log(typeArr);
   console.log(breadResult[type].breadType);
-  resultImg.attributes[1].value = `images/resultImg/bread_${type}.png`;
+  document.getElementById(
+    "bread-result-img"
+  ).attributes[1].value = `images/resultImg/bread_${type}.png`;
 }
+
+document.getElementById("load-html").addEventListener("click", function () {
+  // 변경하고자 하는 HTML 파일의 경로
+  const htmlFilePath = "result.html";
+
+  // Fetch API를 사용하여 HTML 파일을 가져옴
+  fetch(htmlFilePath)
+    .then((response) => response.text())
+    .then((html) => {
+      // 가져온 HTML을 특정 요소에 삽입
+      document.getElementById("dynamic-content").innerHTML = html;
+    })
+    .catch((error) => console.error("Error fetching HTML:", error));
+
+  setTimeout(() => {
+    printResult(maxBreadIndex(typeArr));
+  }, 500);
+});
