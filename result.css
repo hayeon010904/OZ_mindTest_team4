@@ -7,10 +7,13 @@
   height: 560px;
   width: 410px;
   background-color: white;
-  border: 5px solid #675d50;
+  border: 5px solid #44312b;
   border-radius: 5px;
   margin-top: 20px;
   position: relative;
+}
+.bread-result {
+  margin-bottom: 20px;
 }
 .bread-result-info {
   color: rgb(60, 60, 60);
@@ -18,11 +21,17 @@
   font-size: 18px;
   text-align: justify;
 }
+.bread-result-imgDiv {
+  margin-bottom: 20px;
+}
+#bread-result-img {
+  width: 200px;
+}
 
 .shareBox {
   width: 410px;
   height: 83px;
-  background-color: #675d50;
+  background-color: #44312b;
   position: fixed;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -35,7 +44,7 @@
 
 .resultPageBtn {
   color: white;
-  background-color: #675d50;
+  background-color: #44312b;
   border: solid rgb(255, 255, 255) 2px;
   border-radius: 100px;
   height: 56px;
@@ -48,11 +57,14 @@
 }
 .resultPageBtn:hover {
   cursor: pointer;
-  background-color: #675d50;
+  background-color: #44312b;
 }
 #bread-result-content {
   font-size: 50px;
   color: rgb(60, 60, 60);
   margin-bottom: 0;
   margin-top: 40px;
+}
+button {
+  cursor: pointer;
 }

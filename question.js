@@ -1,7 +1,3 @@
-// 질문.답 자연스럽게 정, 줄바꿈설정
-// 이전 버튼 눌렀을 때 이전 질문으로 돌아가는데, 눌렀던 버튼이 저장되도록
-// 로컬스토리지에 사용자정보 저장 -> 다시 돌아오면 결과화면뜨도록.
-
 const question = document.getElementById("question");
 const answer = document.querySelector(".answers");
 const bread1 = document.querySelector(".bread1");
@@ -127,6 +123,28 @@ const questions = [
     },
   },
 ];
+const breadResult = [
+  {
+    breadType: "팥붕어빵",
+    comment: "이것은 팥붕어빵 입니다. ",
+  },
+  {
+    breadType: "슈붕어빵",
+    comment: "이것은 슈붕어빵 입니다. ",
+  },
+  {
+    breadType: "피자붕어빵",
+    comment: "이것은 피자붕어빵 입니다. ",
+  },
+  {
+    breadType: "녹두붕어빵",
+    comment: "이것은 녹두붕어빵 입니다. ",
+  },
+  {
+    breadType: "고구마붕어빵",
+    comment: "이것은 고구마붕어빵 입니다. ",
+  },
+];
 
 const breadResult = [
   {
@@ -180,7 +198,6 @@ answerBottom.addEventListener("click", function () {
   } else {
     const answerBType = questions[ArrIndex - 1].answers.B.type;
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
-
     location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
     printResult(arrMaxIndex);
@@ -199,7 +216,7 @@ function progressBarPrint() {
   const currentWidth = progressBar.offsetWidth; // 30
   progressBar.style.width = currentWidth + 30 + "px";
 }
-
+// 최대값 구하기!!
 function maxBreadIndex(arr) {
   for (let i = 0; i < 5; i++) {
     answerArr.push(
@@ -209,13 +226,9 @@ function maxBreadIndex(arr) {
       )
     );
   }
-
   let maxIndex = answerArr.indexOf(Math.max(...answerArr));
   console.log(answerArr);
-  return maxIndex;
-}
+  console.log(maxIndex);
+  return localStorage.setItem("breadType", maxIndex);
 
-function printResult(type) {
-  console.log(breadResult[type].breadType);
-  // html에 뿌려주는 코드 작성하면 됨.
 }
