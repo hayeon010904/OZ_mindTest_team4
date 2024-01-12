@@ -1,15 +1,3 @@
-//하연 해야할 것들
-//질문객체가 담긴 배열 만들기 -> 완!!
-//클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게 -> 완!!
-//상단 진행 바 +30px -> 완!!
-
-//버튼 눌렀을 때 점수 // -> 첫 질문을 html에서 설정 or js에서 설정?
-// js에서 하는게 좋을 것 같은데 시작하기 눌렀을 때 바로 질문 뜨도록 설정해야하는디
-// 방법1: js에서 첫 문제 띄우기 main html에 question.js연결해서 버튼 누르면 뜨도록
-// 방법2: html로 하는 방법 : 수동으로 첫번째 문제의 type 값 배열에 담아주기
-//가장 높은 점수 출력 하는 것 까지!!
-
-//+
 // 질문.답 자연스럽게 정, 줄바꿈설정
 // 이전 버튼 눌렀을 때 이전 질문으로 돌아가는데, 눌렀던 버튼이 저장되도록
 // 로컬스토리지에 사용자정보 저장 -> 다시 돌아오면 결과화면뜨도록.
@@ -24,8 +12,7 @@ const bread5 = document.querySelector(".bread5");
 const answerTop = document.querySelector("#answer-left");
 const answerBottom = document.querySelector("#answer-right");
 
-const answerArr = [0, 0, 0, 0, 0];
-//질문객체가 담긴 배열 만들기
+const answerArr = [];
 const questions = [
   {
     question: "친구가 마라 붕어빵이 맛있다며 먹어보라고 한다. 나의 대답은?",
@@ -140,77 +127,94 @@ const questions = [
     },
   },
 ];
+const breadResult = [
+  {
+    breadType: "팥붕어빵",
+    comment: "이것은 팥붕어빵 입니다. ",
+  },
+  {
+    breadType: "슈붕어빵",
+    comment: "이것은 슈붕어빵 입니다. ",
+  },
+  {
+    breadType: "피자붕어빵",
+    comment: "이것은 피자붕어빵 입니다. ",
+  },
+  {
+    breadType: "녹두붕어빵",
+    comment: "이것은 녹두붕어빵 입니다. ",
+  },
+  {
+    breadType: "고구마붕어빵",
+    comment: "이것은 고구마붕어빵 입니다. ",
+  },
+];
 
 //답변 클릭했을 때 배열을 하나씩 순회하면서 질문이랑 답 텍스트가 바뀌게 + 콘솔에 붕어빵 종류 담기게
 let ArrIndex = 1;
 const typeArr = []; //type 담아주는 배열 -> 최종적으로 15개 담깁니다!
-// 위 버튼 선택했을 때
+
 answerTop.addEventListener("click", function () {
   if (ArrIndex < questions.length) {
-    question.textContent = questions[ArrIndex].question;
-    answerTop.textContent = questions[ArrIndex].answers.A.text;
-    answerBottom.textContent = questions[ArrIndex].answers.B.text;
-    //type 저장
-    const answerAtype = questions[ArrIndex - 1].answers.A.type;
-    console.log(answerAtype); //질문에 맞는 type 값인지 확인용
-    typeArr.push(answerAtype); // 배열에 어떤 붕어빵인지 넣어주기
-    console.log(typeArr); // 배열에 잘 들어갔는지 확인
+    const answerAType = questions[ArrIndex - 1].answers.A.type;
+    typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기 /
+    questionPrint();
+    progressBarPrint();
+  } else {
+    const answerAType = questions[ArrIndex - 1].answers.A.type;
+    typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
 
-    ArrIndex++;
-    // 진행바 +30px씩
-    const progressBar = document.querySelector(".progressbar-bar");
-    const currnetWIdth = progressBar.offsetWidth; // 30
-    const newWidth = currnetWIdth + 30; // 30씩 추가
-    progressBar.style.width = newWidth + "px";
+    location.replace("result.html");
+    let arrMaxIndex = maxBreadIndex(typeArr);
+    printResult(arrMaxIndex);
   }
 });
-//아래버튼 선택했을 때
+
 answerBottom.addEventListener("click", function () {
   if (ArrIndex < questions.length) {
-    question.textContent = questions[ArrIndex].question;
-    answerTop.textContent = questions[ArrIndex].answers.A.text;
-    answerBottom.textContent = questions[ArrIndex].answers.B.text;
-    //type 저장
-    const answerBtype = questions[ArrIndex - 1].answers.B.type;
-    console.log(answerBtype); //질문에 맞는 type 값인지 확인용
-    typeArr.push(answerBtype); // 배열에 어떤 붕어빵인지 넣어주기
-    console.log(typeArr); // 배열에 잘 들어갔는지 확인
+    const answerBType = questions[ArrIndex - 1].answers.B.type;
+    typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
+    questionPrint();
+    progressBarPrint();
+  } else {
+    const answerBType = questions[ArrIndex - 1].answers.B.type;
+    typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
 
-    // if(ArrIndex===14){//마지막 질문일때의 class 값 수동으로 배열에 넣어주기!
-    //     const answerAClass = questions[14].answers.A.class;
-    //     classArr.push(answerAClass);
-    //     console.log(classArr);
-    // }
-    ArrIndex++;
-    // 진행바 +30px씩
-    const progressBar = document.querySelector(".progressbar-bar");
-    const currnetWIdth = progressBar.offsetWidth; // 30
-    const newWidth = currnetWIdth + 30; // 30씩 추가
-    progressBar.style.width = newWidth + "px";
+    location.replace("result.html");
+    let arrMaxIndex = maxBreadIndex(typeArr);
+    printResult(arrMaxIndex);
   }
 });
 
-// const answerBClass = questions[ArrIndex].answers.B.class;
-// console.log(answerBClass)
-// //아래부터는 점수계산 시도들..~
+function questionPrint() {
+  question.textContent = questions[ArrIndex].question;
+  answerTop.textContent = questions[ArrIndex].answers.A.text;
+  answerBottom.textContent = questions[ArrIndex].answers.B.text;
+  ArrIndex++;
+}
 
-// const breadclassA = questions[ArrIndex].answers.A.class; // bread1
-// const breadclassB = questions[ArrIndex].answers.B.class; //bread2
+function progressBarPrint() {
+  const progressBar = document.querySelector(".progressbar-bar");
+  const currentWidth = progressBar.offsetWidth; // 30
+  progressBar.style.width = currentWidth + 30 + "px";
+}
 
-//    console.log(breadclass1)
-//    console.log(breadclass2)
+function maxBreadIndex(arr) {
+  for (let i = 0; i < 5; i++) {
+    answerArr.push(
+      arr.reduce(
+        (count, element) => (element === `bread${i}` ? count + 1 : count),
+        0
+      )
+    );
+  }
 
-//    if (breadclassA === 'bread1') {
-//         answer.addEventListener("click", function () {
-//         answerArr[0] += 1
-//         console.log(answerArr);
-//       });
-//      elseIf(breadclassA === 'bread2');{
-//             answer.addEventListener("click", function () {
-//             answerArr[1] += 1
-//             console.log(answerArr);
-//           });
-//      }
-//    } else {
+  let maxIndex = answerArr.indexOf(Math.max(...answerArr));
+  console.log(answerArr);
+  return maxIndex;
+}
 
-//    }
+function printResult(type) {
+  console.log(breadResult[type].breadType);
+  // html에 뿌려주는 코드 작성하면 됨.
+}
