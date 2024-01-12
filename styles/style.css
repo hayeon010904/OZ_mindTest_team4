@@ -19,7 +19,7 @@ html {
 body {
   width: 100%;
   height: 100dvh;
-  background-image: url("/images/background.png");
+  background-image: url("../images/background.png");
   background-position: center;
   background-size: contain;
   position: relative;
@@ -32,14 +32,14 @@ body {
   top: 0;
   height: 92px;
   width: 100%;
-  background: url("/images/background_header.png");
+  background: url("../images/background_header.png");
   background-position: center;
   z-index: 999;
 }
 .background_top {
   position: absolute;
   z-index: 0;
-  background: url("images/background_top.png");
+  background: url("../images/background_top.png");
   width: 100%;
   height: 390px;
   top: 0;
@@ -49,7 +49,7 @@ body {
 
 .background_bottom {
   position: absolute;
-  background: url("images/background_bottom.png");
+  background: url("../images/background_bottom.png");
   width: 100%;
   z-index: -9;
   height: 390px;
