@@ -164,7 +164,7 @@ answerTop.addEventListener("click", function () {
     const answerAType = questions[ArrIndex - 1].answers.A.type;
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
 
-    location.replace("result.html");
+    location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
     printResult(arrMaxIndex);
   }
@@ -180,7 +180,7 @@ answerBottom.addEventListener("click", function () {
     const answerBType = questions[ArrIndex - 1].answers.B.type;
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
 
-    location.replace("result.html");
+    location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
     printResult(arrMaxIndex);
   }
