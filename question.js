@@ -1,4 +1,3 @@
-
 // 질문.답 자연스럽게 정, 줄바꿈설정
 // 이전 버튼 눌렀을 때 이전 질문으로 돌아가는데, 눌렀던 버튼이 저장되도록
 // 로컬스토리지에 사용자정보 저장 -> 다시 돌아오면 결과화면뜨도록.
@@ -166,7 +165,7 @@ answerTop.addEventListener("click", function () {
     const answerAType = questions[ArrIndex - 1].answers.A.type;
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
 
-    location.replace("result.html");
+    location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
     printResult(arrMaxIndex);
   }
@@ -182,7 +181,7 @@ answerBottom.addEventListener("click", function () {
     const answerBType = questions[ArrIndex - 1].answers.B.type;
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
 
-    location.replace("result.html");
+    location.href = "result.html";
     let arrMaxIndex = maxBreadIndex(typeArr);
     printResult(arrMaxIndex);
   }
