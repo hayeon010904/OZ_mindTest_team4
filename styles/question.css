@@ -5,6 +5,13 @@
   justify-content: center;
   position: relative;
 }
+#back{
+ font-size: 3rem;
+ position:relative;
+ bottom: 225px;
+ right:10px;
+ color:#a56548
+}
 .progressbar {
   margin-top: -100px;
   position: relative;
