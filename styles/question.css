@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: relative;  
+   
 }
 #back{
  font-size: 3rem;
