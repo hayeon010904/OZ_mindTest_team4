@@ -51,6 +51,9 @@
   width: 20rem;
   z-index: 999;
 }
+a{
+  text-decoration: none;
+}
 button {
   width: 7rem;
   padding: 0.35rem;
@@ -70,4 +73,11 @@ button:hover {
   background-color: #ab755b;
   box-shadow: 3px 3px 2px #593727;
   transform: translateY(-3px);
+}
+.ToResult{
+  display: none;
+}
+
+.display_block{
+  display: block;
 }
