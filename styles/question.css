@@ -75,3 +75,7 @@
   background-color: #402500;
   transition: all 0.3s;
 }
+.cliked{
+  color: #ededed;
+  background-color: #402500;
+}

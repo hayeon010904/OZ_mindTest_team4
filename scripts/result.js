@@ -33,5 +33,5 @@ resultContent.textContent = breadResult[type].breadType;
 resultInfo.textContent = breadResult[type].comment;
 
 reloadBtn.addEventListener("click", () => {
-  location.href = "main.html";
+  location.href = "index.html";
 });
