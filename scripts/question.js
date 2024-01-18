@@ -171,6 +171,7 @@ answerTop.addEventListener("click", function () {
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기 /
     questionPrint();
     progressBarPrint();
+    console.log(typeArr);
   } else {
     const answerAType = questions[ArrIndex - 1].answers.A.type;
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
@@ -185,9 +186,9 @@ answerBottom.addEventListener("click", function () {
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
     questionPrint();
     progressBarPrint();
+
+    console.log(typeArr);
   } else {
-    const answerBType = questions[ArrIndex - 1].answers.B.type;
-    typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
     location.href = "result.html";
     maxBreadIndex(typeArr);
   }
@@ -199,12 +200,29 @@ function questionPrint() {
   answerBottom.textContent = questions[ArrIndex].answers.B.text;
   ArrIndex++;
 }
-
 function progressBarPrint() {
   const progressBar = document.querySelector(".progressbar-bar");
   const currentWidth = progressBar.offsetWidth; // 30
   progressBar.style.width = currentWidth + 30 + "px";
 }
+// 화살표 눌렀을 때, 이전 질문과 답으로 돌아가도록. (인덱싱오류.... )
+// 뒤로 갈때 배열에 담긴 이전 답변도 삭제해야함
+const backBtn = document.getElementById("back");
+backBtn.onclick = function () {
+  if (ArrIndex > 1) {
+    question.textContent = questions[ArrIndex].question;
+    answerTop.textContent = questions[ArrIndex].answers.A.text;
+    answerBottom.textContent = questions[ArrIndex].answers.B.text;
+    ArrIndex--;
+    typeArr.pop(); // 배열의 마지막 요소 삭제
+    console.log(typeArr); // 없어졌는지 확인
+
+    const progressBar = document.querySelector(".progressbar-bar");
+    const currentWidth = progressBar.offsetWidth; // 30
+    progressBar.style.width = currentWidth - 30 + "px";
+  }
+};
+
 // 최대값 구하기!!
 function maxBreadIndex(arr) {
   for (let i = 0; i < 5; i++) {
@@ -218,7 +236,6 @@ function maxBreadIndex(arr) {
   let maxIndex = answerArr.indexOf(Math.max(...answerArr));
   console.log(answerArr);
   console.log(maxIndex);
-
   return localStorage.setItem("breadType", maxIndex);
 }
 
