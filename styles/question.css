@@ -1,20 +1,23 @@
 .container-col {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;  
+  margin: 0;
    
 }
 #back{
  font-size: 3rem;
  position:relative;
- bottom: 225px;
- right:10px;
- color:#a56548
+ bottom: 155px;
+ right:30px;
+ color:#a56548;
+ display: none;
 }
 .progressbar {
-  margin-top: -100px;
+  margin-top: 50px;
   position: relative;
   margin-bottom: 40px;
 }
@@ -37,6 +40,7 @@
   top: 0;
 }
 .question {
+  /* margin-top: 150px; */
   width: 510px;
   height: 130px;
   flex-shrink: 0;
