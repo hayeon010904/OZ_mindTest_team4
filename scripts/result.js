@@ -25,12 +25,12 @@ const type = localStorage.getItem("breadType");
 const resultImg = document.getElementById("bread-result-img");
 const resultContent = document.getElementById("bread-result-content");
 const resultInfo = document.getElementById("bread-result-info");
-const shareBtn = document.querySelector("#share");
-const reloadBtn = document.getElementById("reload");
+const shareBtn = document.getElementById("share");
 
 resultImg.attributes[1].value = `images/bread_${type}.png`;
 resultContent.textContent = breadResult[type].breadType;
 resultInfo.textContent = breadResult[type].comment;
+
 
 reloadBtn.addEventListener("click", () => {
   location.href = "index.html";
@@ -52,3 +52,4 @@ function clip(){
 shareBtn.addEventListener('click',function(){
   clip()
 })
+

@@ -155,6 +155,10 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node,firebase
 
-test-connection.js
-test.html
+
+apikey.js
+gptapi.js
+
+
+
 
