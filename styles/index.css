@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
 }
+
 #background_top {
   width: 100%;
   height: 45%;
@@ -43,15 +44,25 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 #title_text {
   width: 20rem;
   z-index: 999;
+
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 #title_img {
   width: 20rem;
   z-index: 999;
 }
-a{
+a {
   text-decoration: none;
 }
 button {
@@ -74,10 +85,25 @@ button:hover {
   box-shadow: 3px 3px 2px #593727;
   transform: translateY(-3px);
 }
-.ToResult{
+.ToResult {
   display: none;
 }
 
-.display_block{
+.display_block {
   display: block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
 }
