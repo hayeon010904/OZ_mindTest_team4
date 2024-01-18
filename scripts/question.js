@@ -44,6 +44,7 @@ async function updateCount() {
 const question = document.getElementById("question");
 const answerTop = document.querySelector("#answer-left");
 const answerBottom = document.querySelector("#answer-right");
+const backBtn = document.getElementById("back");
 
 const answerArr = [];
 const questions = [
@@ -196,6 +197,8 @@ answerTop.addEventListener("click", function () {
     questionPrint();
     progressBarPrint();
     console.log(typeArr);
+    backBtn.style.display = "block";
+    
   } else {
     const answerAType = questions[ArrIndex - 1].answers.A.type;
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
@@ -210,8 +213,8 @@ answerBottom.addEventListener("click", function () {
     typeArr.push(answerBType); // 배열에 어떤 붕어빵인지 넣어주기
     questionPrint();
     progressBarPrint();
-
     console.log(typeArr);
+    backBtn.style.display = "block";
   } else {
     location.href = "result.html";
     maxBreadIndex(typeArr);
@@ -231,7 +234,7 @@ function progressBarPrint() {
 }
 // 화살표 눌렀을 때, 이전 질문과 답으로 돌아가도록. (인덱싱오류.... )
 // 뒤로 갈때 배열에 담긴 이전 답변도 삭제해야함
-const backBtn = document.getElementById("back");
+
 backBtn.onclick = function () {
   if (ArrIndex > 1) {
     question.textContent = questions[ArrIndex].question;
