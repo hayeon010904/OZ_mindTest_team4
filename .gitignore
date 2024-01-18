@@ -156,3 +156,4 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node,firebase
 
 apikey.js
+gptapi.js

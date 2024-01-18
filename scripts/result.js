@@ -26,12 +26,7 @@ const resultImg = document.getElementById("bread-result-img");
 const resultContent = document.getElementById("bread-result-content");
 const resultInfo = document.getElementById("bread-result-info");
 const shareBtn = document.getElementById("share");
-const reloadBtn = document.getElementById("reload");
 
 resultImg.attributes[1].value = `images/bread_${type}.png`;
 resultContent.textContent = breadResult[type].breadType;
 resultInfo.textContent = breadResult[type].comment;
-
-reloadBtn.addEventListener("click", () => {
-  location.href = "main.html";
-});
