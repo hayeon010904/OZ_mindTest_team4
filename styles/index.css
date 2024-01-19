@@ -59,6 +59,9 @@
 #title_img {
   width: 20rem;
   z-index: 999;
+
+
+  
 }
 
 a {
@@ -69,7 +72,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 button {
   width: 7rem;
@@ -86,9 +91,6 @@ button {
   z-index: 999;
   margin-top: 1.5rem;
 
-  animation-name: pulse;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
 
  
 }
