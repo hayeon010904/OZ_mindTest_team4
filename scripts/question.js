@@ -56,14 +56,14 @@ const questions = [
     },
   },
   {
-    question: "만약, 당신이 붕어빵 가게 사장님이라면, 어떤 전략을 세울건가요?",
+    question: `만약, 당신이 붕어빵 가게 사장님이라면, \n  어떤 전략을 세울건가요?`,
     answers: {
       A: { text: "요즘은 무조건 홍보! 적극 SNS 활용", type: "bread3" },
       B: { text: "근본은 맛이지. 맛도리 붕어빵을 만들거야!", type: "bread6" },
     },
   },
   {
-    question: "올해 첫 붕어빵을 먹었다. 친구들한테 자랑해야지",
+    question: "올해 첫 붕어빵을 먹었다. \n 친구들한테 자랑해야지",
     answers: {
       A: { text: "사진찍어서 인스타 스토리에 올린다", type: "bread6" },
       B: { text: "카톡으로 말해준다", type: "bread4" },
@@ -78,7 +78,7 @@ const questions = [
     },
   },
   {
-    question: "친구가 붕어빵기게를 샀다며 같이 만들어먹자고한다. 나의 반응은?",
+    question: "친구가 붕어빵기게를 샀다며 만들어먹자고한다. \n 나의 반응은?",
     answers: {
       A: {
         text: "친구야 붕어빵 기게 사는게 더 비싸지 않니?",
@@ -89,20 +89,20 @@ const questions = [
   },
   {
     question:
-      "당신은 붕어빵가게 사장님! 손님이 나에게 했을때 더 기분 좋은 말은?",
+      "당신은 붕어빵가게 사장님! \n  손님이 나에게 했을때 더 기분 좋은 말은?",
     answers: {
       A: {
-        text: "사장님 매일 밤새서 연구하시더니 여기 붕어빵이 세상에서 제일 맛있어요..",
+        text: "사장님 매일 연구하시더니  \n 여기 붕어빵이 세상에서 제일 맛있어요..",
         type: "bread6",
       },
       B: {
-        text: "사장님 인스타보면 매일 놀러다니시는 것 같은데 여기는 왜 이렇게 맛있어요?????",
+        text: "사장님 인스타보면 매일 놀러다니시는 것 같은데  \n  왜 이렇게 맛있어요?????",
         type: "bread3",
       },
     },
   },
   {
-    question: "친구가 나 속상해서 붕어빵 사먹었어 라고 한다. 나의 반응은?",
+    question: "친구가 나 속상해서 붕어빵 사먹었어 라고 한다.  \n 나의 반응은?",
     answers: {
       A: { text: "... 무슨 붕어빵?", type: "bread1" },
       B: { text: "왜 속상했어? ", type: "bread4" },
@@ -124,7 +124,7 @@ const questions = [
   },
   {
     question:
-      "새로운 신메뉴 아이디어가 떠올랐다. 그런데 손님들이 좋아할 지 잘 모르겠다. 나의 선택은?",
+      "신메뉴 아이디어가 떠올랐는데, \n  손님들이 좋아할 지 모르겠다.  나의 선택은?",
     answers: {
       A: { text: "일단 만들어서 도전해본다", type: "bread2" },
       B: {
@@ -141,21 +141,20 @@ const questions = [
     },
   },
   {
-    question:
-      "새로 출시한 마라붕어빵이 생각보다 너무 잘 팔려서 매일 재고가 없다. 당신의 선택은?",
+    question: "신메뉴 마라붕어빵이 생각보다 너무 잘 팔린다.\n  당신의 선택은?",
     answers: {
       A: { text: "마라붕어빵만 집중 판매한다.", type: "bread5" },
       B: {
-        text: "슈크림이랑 팥 붕어빵도 팔아야하니까.. 기존의 붕어빵을 사먹도록 유도한다.",
+        text: "슈크림이랑 팥 붕어빵도 팔아야하니까..\n  기존의 붕어빵을 사먹도록 유도한다.",
         type: "bread5",
       },
     },
   },
   {
     question:
-      "내 가게 옆에 붕어빵 가게가 생겼다. 근데 내가 먼저 개발한 마라붕어빵을 판매한다. 나의 대응은?",
+      "우리 가게 옆에 붕어빵 가게가 생겼다. \n  그런데 마라붕어빵이 메뉴에 있다..!? \n 나의 대응은?",
     answers: {
-      A: { text: " 가게에 가서 따진다. ", type: "bread5" },
+      A: { text: "옆 가게에 가서 따진다. ", type: "bread5" },
       B: {
         text: " 화가 나지만 어쩔 수 없지하며 신메뉴를 개발한다. ",
         type: "bread1",
@@ -221,8 +220,8 @@ answerBottom.addEventListener("click", function () {
 
 function questionPrint() {
   question.innerText = questions[ArrIndex].question;
-  answerTop.textContent = questions[ArrIndex].answers.A.text;
-  answerBottom.textContent = questions[ArrIndex].answers.B.text;
+  answerTop.innerText = questions[ArrIndex].answers.A.text;
+  answerBottom.innerText = questions[ArrIndex].answers.B.text;
   ArrIndex++;
 }
 function progressBarPrint() {
@@ -235,10 +234,11 @@ function progressBarPrint() {
 
 backBtn.onclick = function () {
   if (ArrIndex > 1) {
-    question.textContent = questions[ArrIndex].question;
-    answerTop.textContent = questions[ArrIndex].answers.A.text;
-    answerBottom.textContent = questions[ArrIndex].answers.B.text;
     ArrIndex--;
+    question.innerText = questions[ArrIndex - 1].question;
+    answerTop.innerText = questions[ArrIndex - 1].answers.A.text;
+    answerBottom.innerText = questions[ArrIndex - 1].answers.B.text;
+
     typeArr.pop(); // 배열의 마지막 요소 삭제
     console.log(typeArr); // 없어졌는지 확인
 
