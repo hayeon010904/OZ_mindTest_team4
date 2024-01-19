@@ -7,34 +7,8 @@
   justify-content: center;
   align-items: center;
 }
-/* 
-#background_top {
-  width: 100%;
-  height: 45%;
-  position: fixed;
-  top: 0;
-  background-repeat: no-repeat;
-}
-#background_bottom {
-  width: 100%;
-  height: 45%;
-  position: fixed;
-  bottom: 0px;
-  background-repeat: no-repeat;
-}
-#background_header {
-  width: 100%;
-  min-height: 50px;
-  max-height: 80px;
-  position: fixed;
-  top: 0;
-  background-repeat: no-repeat;
-} */
 #article {
-  margin-top: 50px;
-  /* border: 1px solid black; */
   width: 32rem;
-  /* height: 492px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,19 +35,14 @@
   z-index: 999;
 }
 
-a {
-  text-decoration: none;
-}
-#buttons{
-  width: 100%;
+#buttons {
+  /* width: 100%; */
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  
+  justify-content: center;
+  gap: 10px;
 }
 button {
-  width: 7rem;
-  padding: 0.35rem;
   box-shadow: 1px 1px 2px black;
   border: none;
   border-radius: 0.8rem;
@@ -81,7 +50,6 @@ button {
   margin: auto;
   background-image: url("../images/background_button.png");
   background-size: contain;
-  /* background-color: #A36447; */
   color: #ffffff;
   z-index: 999;
   margin-top: 1.5rem;
@@ -89,9 +57,11 @@ button {
   animation-name: pulse;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
-
- 
+  width: 140px;
+  padding: 15px;
+  cursor: pointer;
 }
+
 button:hover {
   background-color: #ab755b;
   box-shadow: 3px 3px 2px #593727;
@@ -107,16 +77,16 @@ button:hover {
 
 @keyframes pulse {
   0% {
-    transform: scale(0.9);
-    opacity: 0.7;
+    transform: scale(0.97);
+    opacity: 0.9;
   }
   50% {
     transform: scale(1);
     opacity: 1;
   }
   100% {
-    transform: scale(0.9);
-    opacity: 0.7;
+    transform: scale(0.97);
+    opacity: 0.9;
   }
 }
 @-webkit-keyframes tracking-in-expand-fwd-top {
@@ -150,4 +120,12 @@ button:hover {
     transform: translateZ(0) translateY(0);
     opacity: 1;
   }
+}
+
+.countDiv {
+  margin-top: 20px;
+  width: 100%;
+
+  text-align: center;
+  font-size: 18px;
 }

@@ -220,7 +220,7 @@ answerBottom.addEventListener("click", function () {
 });
 
 function questionPrint() {
-  question.textContent = questions[ArrIndex].question;
+  question.innerText = questions[ArrIndex].question;
   answerTop.textContent = questions[ArrIndex].answers.A.text;
   answerBottom.textContent = questions[ArrIndex].answers.B.text;
   ArrIndex++;
