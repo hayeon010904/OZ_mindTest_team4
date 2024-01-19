@@ -16,10 +16,8 @@ const firebaseConfig = {
   messagingSenderId: "603853071891",
   appId: "1:603853071891:web:8f5897ccba3d96e7e541e6",
 };
-
 const appFS = initializeApp(firebaseConfig);
 const db = getFirestore(appFS);
-const usersRef = collection(db, "users");
 let bufCount;
 
 async function getCount() {
@@ -41,6 +39,7 @@ async function updateCount() {
   });
 }
 
+getCount();
 const question = document.getElementById("question");
 const answerTop = document.querySelector("#answer-left");
 const answerBottom = document.querySelector("#answer-right");
@@ -198,7 +197,6 @@ answerTop.addEventListener("click", function () {
     progressBarPrint();
     console.log(typeArr);
     backBtn.style.display = "block";
-    
   } else {
     const answerAType = questions[ArrIndex - 1].answers.A.type;
     typeArr.push(answerAType); // 배열에 어떤 붕어빵인지 넣어주기
@@ -265,5 +263,3 @@ function maxBreadIndex(arr) {
   console.log(maxIndex);
   return localStorage.setItem("breadType", maxIndex);
 }
-
-getCount();
