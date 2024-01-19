@@ -238,7 +238,6 @@ backBtn.onclick = function () {
     question.innerText = questions[ArrIndex-1].question;
     answerTop.innerText = questions[ArrIndex-1].answers.A.text;
     answerBottom.innerText = questions[ArrIndex-1].answers.B.text;
-    
     typeArr.pop(); // 배열의 마지막 요소 삭제
     console.log(typeArr); // 없어졌는지 확인
 
