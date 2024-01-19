@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 #article {
   width: 32rem;
@@ -33,9 +34,6 @@
 #title_img {
   width: 20rem;
   z-index: 999;
-
-
-  
 }
 
 #buttons {
@@ -57,14 +55,12 @@ button {
   z-index: 999;
   margin-top: 1.5rem;
 
-
   animation-name: pulse;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   width: 140px;
   padding: 15px;
   cursor: pointer;
-
 }
 
 button:hover {
@@ -129,8 +125,8 @@ button:hover {
 
 .countDiv {
   margin-top: 20px;
-  width: 100%;
-
   text-align: center;
   font-size: 18px;
+  position: absolute;
+  bottom: -50px;
 }
