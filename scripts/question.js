@@ -1,3 +1,45 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  updateDoc,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+
+const API_KEY = config.apikey;
+const firebaseConfig = {
+  apiKey: API_KEY,
+  authDomain: "oz-project-16f76.firebaseapp.com",
+  projectId: "oz-project-16f76",
+  storageBucket: "oz-project-16f76.appspot.com",
+  messagingSenderId: "603853071891",
+  appId: "1:603853071891:web:8f5897ccba3d96e7e541e6",
+};
+const appFS = initializeApp(firebaseConfig);
+const db = getFirestore(appFS);
+let bufCount;
+
+async function getCount() {
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => {
+    bufCount = Number(doc.data().count);
+    bufCount++;
+    console.log(bufCount);
+    updateCount();
+  });
+}
+
+async function updateCount() {
+  const userRefUpdate = doc(db, "users", "0");
+
+  // Set the "capital" field of the city 'DC'
+  await updateDoc(userRefUpdate, {
+    count: bufCount,
+  });
+}
+
+getCount();
 const question = document.getElementById("question");
 const answerTop = document.querySelector("#answer-left");
 const answerBottom = document.querySelector("#answer-right");
