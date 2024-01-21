@@ -7,9 +7,13 @@ import {
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-const API_KEY = config.apikey;
+import dotenv from "dotenv";
+dotenv.config();
+// Uncaught TypeError: “dotenv/config” 지정자는 Bare 지정자였지만 아무 데도 다시 매핑되지 않았습니다.
+// 상대 모듈 지정자는“./”, “../” 또는 “/”로 시작해야 합니다.
+
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: process.env.FB_API,
   authDomain: "oz-project-16f76.firebaseapp.com",
   projectId: "oz-project-16f76",
   storageBucket: "oz-project-16f76.appspot.com",
@@ -235,9 +239,9 @@ function progressBarPrint() {
 backBtn.onclick = function () {
   if (ArrIndex > 1) {
     ArrIndex--;
-    question.innerText = questions[ArrIndex-1].question;
-    answerTop.innerText = questions[ArrIndex-1].answers.A.text;
-    answerBottom.innerText = questions[ArrIndex-1].answers.B.text;
+    question.innerText = questions[ArrIndex - 1].question;
+    answerTop.innerText = questions[ArrIndex - 1].answers.A.text;
+    answerBottom.innerText = questions[ArrIndex - 1].answers.B.text;
     typeArr.pop(); // 배열의 마지막 요소 삭제
     console.log(typeArr); // 없어졌는지 확인
 
