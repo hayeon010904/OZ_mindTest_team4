@@ -5,9 +5,8 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-const API_KEY = config.apikey;
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyBM2eX0ffEiltmFC_MXZ-_d9VHpDdgyAsU",
   authDomain: "oz-project-16f76.firebaseapp.com",
   projectId: "oz-project-16f76",
   storageBucket: "oz-project-16f76.appspot.com",

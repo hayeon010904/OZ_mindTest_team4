@@ -7,13 +7,8 @@ import {
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-import dotenv from "dotenv";
-dotenv.config();
-// Uncaught TypeError: “dotenv/config” 지정자는 Bare 지정자였지만 아무 데도 다시 매핑되지 않았습니다.
-// 상대 모듈 지정자는“./”, “../” 또는 “/”로 시작해야 합니다.
-
 const firebaseConfig = {
-  apiKey: process.env.FB_API,
+  apiKey: "AIzaSyBM2eX0ffEiltmFC_MXZ-_d9VHpDdgyAsU",
   authDomain: "oz-project-16f76.firebaseapp.com",
   projectId: "oz-project-16f76",
   storageBucket: "oz-project-16f76.appspot.com",
