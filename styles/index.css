@@ -9,6 +9,7 @@
   position: relative;
 }
 #article {
+  /* border: 1px solid black; */
   width: 32rem;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
 }
 
 #buttons {
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,4 +130,45 @@ button:hover {
   font-size: 18px;
   position: absolute;
   bottom: -50px;
+}
+
+@media screen and (max-width: 450px) {
+  #article {
+    width: 20rem;
+  }
+  #title_text {
+    width: 18rem;
+  }
+  #title_img {
+    width: 18rem;
+  }
+  #buttons {
+    width: 100%;
+  }
+  button {
+    justify-content: space-between;
+    width: 120px;
+    margin-top: 55px;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #article {
+    width: 18rem;
+  }
+  #title_text {
+    width: 16rem;
+  }
+  #title_img {
+    width: 16rem;
+  }
+  #buttons {
+    width: 100%;
+  }
+  button {
+    justify-content: space-between;
+    width: 120px;
+    margin-top: 55px;
+    padding: 10px;
+  }
 }

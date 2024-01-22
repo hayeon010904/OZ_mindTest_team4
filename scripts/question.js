@@ -227,7 +227,11 @@ function questionPrint() {
 function progressBarPrint() {
   const progressBar = document.querySelector(".progressbar-bar");
   const currentWidth = progressBar.offsetWidth; // 30
-  progressBar.style.width = currentWidth + 30 + "px";
+  if (matchMedia("screen and (max-width:450px)").matches) {
+    progressBar.style.width = currentWidth + 16 + "px";
+  } else {
+    progressBar.style.width = currentWidth + 30 + "px";
+  }
 }
 // 화살표 눌렀을 때, 이전 질문과 답으로 돌아가도록. (인덱싱오류.... )
 // 뒤로 갈때 배열에 담긴 이전 답변도 삭제해야함
@@ -235,18 +239,20 @@ function progressBarPrint() {
 backBtn.onclick = function () {
   if (ArrIndex > 1) {
     ArrIndex--;
-    question.innerText = questions[ArrIndex-1].question;
-    answerTop.innerText = questions[ArrIndex-1].answers.A.text;
-    answerBottom.innerText = questions[ArrIndex-1].answers.B.text;
+    question.innerText = questions[ArrIndex - 1].question;
+    answerTop.innerText = questions[ArrIndex - 1].answers.A.text;
+    answerBottom.innerText = questions[ArrIndex - 1].answers.B.text;
     typeArr.pop(); // 배열의 마지막 요소 삭제
     console.log(typeArr); // 없어졌는지 확인
-
     const progressBar = document.querySelector(".progressbar-bar");
     const currentWidth = progressBar.offsetWidth; // 30
-    progressBar.style.width = currentWidth - 30 + "px";
+    if (matchMedia("screen and (max-width:450px)").matches) {
+      progressBar.style.width = currentWidth - 16 + "px";
+    } else {
+      progressBar.style.width = currentWidth - 30 + "px";
+    }
   }
 };
-
 // 최대값 구하기!!
 function maxBreadIndex(arr) {
   for (let i = 0; i < 6; i++) {
