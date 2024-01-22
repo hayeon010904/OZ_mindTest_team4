@@ -77,3 +77,21 @@
 button {
   cursor: pointer;
 }
+@media screen and (max-width: 450px) {
+  .resultBox {
+    height: 450px;
+    width: 300px;
+  }
+  #bread-result-content {
+    font-size: 40px;
+  }
+  #bread-result-img {
+    width: 150px;
+  }
+  .bread-result-info {
+    font-size: 14px;
+  }
+  .shareBox {
+    width: 300px;
+  }
+}
