@@ -3,38 +3,52 @@
   flex-direction: column;
   align-items: center;
   max-width: 500px;
-  margin: auto;
-  height: 560px;
-  width: 410px;
-  background-color: white;
-  border: 5px solid #44312b;
-  border-radius: 5px;
+  height: 500px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.845);
+  /* border: 5px solid #44312b; */
+  border-radius: 10px;
   margin-top: 20px;
   position: relative;
+  margin-top: 90px;
+  padding-top: 30px;
 }
 .bread-result {
   margin-bottom: 20px;
 }
-.bread-result-info {
+#bread-result-title {
+  text-align: center;
+  color: #44312b;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#bread-result-content {
+  font-size: 50px;
   color: rgb(60, 60, 60);
-  padding: 0px 30px;
-  font-size: 18px;
-  text-align: justify;
+  margin-bottom: 0;
+  margin-top: 0px;
 }
 .bread-result-imgDiv {
   margin-bottom: 20px;
 }
 #bread-result-img {
-  width: 200px;
+  width: 180px;
+}
+.bread-result-info {
+  color: rgb(60, 60, 60);
+  padding: 0px 30px;
+  font-size: 15px;
+  text-align: justify;
+  text-align: center;
 }
 
 .shareBox {
-  width: 410px;
-  height: 83px;
+  width: 350px;
+  height: 63px;
   background-color: #44312b;
   position: fixed;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   position: absolute;
   bottom: 0;
   display: flex;
@@ -47,24 +61,19 @@
   background-color: #44312b;
   border: solid rgb(255, 255, 255) 2px;
   border-radius: 100px;
-  height: 56px;
-  width: 56px;
+  height: 46px;
+  width: 46px;
   font-size: larger;
 }
 .share {
-  width: 300px;
+  width: 200px;
   margin-right: 17px;
 }
 .resultPageBtn:hover {
   cursor: pointer;
   background-color: #44312b;
 }
-#bread-result-content {
-  font-size: 50px;
-  color: rgb(60, 60, 60);
-  margin-bottom: 0;
-  margin-top: 40px;
-}
+
 button {
   cursor: pointer;
 }
